@@ -43,8 +43,8 @@ module "ewf_rpc_prod" {
     ec2_instance_type                 = "t3.medium"
     ip_access_range_ingress_ssh       = "89.64.55.0"
     cidr_mask_ingress_ssh             = "/24"
-    vpc_id                            = "vpc_id"
-    subnet_id                         = "subnet_id"
+    vpc_id                            = "vpc-01e713fc4920a8666"
+    subnet_id                         = "subnet-04782249f892f6b22"
     load_backup                       = true
     name                              = "EWF"
 }
@@ -56,6 +56,9 @@ module "ewf_rpc_prod" {
 Please be aware of your current networking setup to ensure that it is ok to create connection between internet and your subnet
 
 ## TODOs
+- HTTPS
+- HA
+- Observability
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
