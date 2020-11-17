@@ -95,6 +95,11 @@ Type: `string`
 
 Description: Internet Gateway Object needed for EC2 dependency.
 
+### key\_pair\_name
+
+Description: "Name of the key pair to attach to EC2"
+
+Type: `string`
 
 ## Optional Inputs
 

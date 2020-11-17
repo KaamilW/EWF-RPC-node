@@ -10,7 +10,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "ewf_rpc_ec2" {
   ami                    = data.aws_ami.ubuntu.id
-  key_name               = "EWTPem"
+  key_name               = var.key_name
   instance_type          = var.ec2_instance_type
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [aws_security_group.ewf_rpc_sg.id]
