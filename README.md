@@ -32,7 +32,7 @@ By default, it sets up an t2.micro EC2 instance with 30GB storage and configures
 - Terraform installed on your machine (https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
 ## Examples
-Sample example can be found in [example](./example) subfolder.
+Sample example can be found in [example](./ewf_setup_module/example) subfolder.
 
 ```hcl
 module "ewf_rpc_prod" {
