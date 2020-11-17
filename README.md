@@ -1,29 +1,19 @@
 ## Description
-This module:
-  - Creates Internet Gateway for a given VPC
+Terraform Module to quickly create EWF RPC Node on AWS.
 
-  - Creates a connection between IGW and provided subnet in Route Tables
+This module:
 
   - Sets up Ubuntu 18.04 EC2 instance
-
   - Configures Security Groups:
-
     - Inbound:
-
       - 80 & 443 TCP from 0.0.0.0/0
-
       - 22 TCP from either your network ISP (default) or provided IP
-
       - 8-0 ICMP from 0.0.0.0/0 (for pinging purposes)
-
     - Outbound:
-
       - All ports for all protocols for 0.0.0.0/0   
 
   - Associates Elastic IP with EC2
-
   - Preconfigures Energy Web Foundation RPC node for either test/prod network (based on https://github.com/energywebfoundation/ewf-rpc)
-
   - Downloads chain snapshot to speed up sync with a chain
 
 Snapshot link can be found here: https://energyweb.atlassian.net/wiki/spaces/EWF/pages/1013153839/How+to+use+ready-to-go+chain+backup
