@@ -25,7 +25,7 @@ By default, it sets up an t2.micro EC2 instance with 30GB storage and configures
 
 ## Prerequisities
 
-- AWS Account and user generated with proper permissions (Internet Gateway, Security Groups, Route Tables, EC2, Elastic IP) or admin permissions for simplicity.
+- AWS Account and user generated with proper permissions for resources manipulation (Security Groups, Route Tables, EC2, Elastic IP) or admin permissions for simplicity.
 
 - Key pair generated to be associated with EC2 for debuging purposes (EC2 -> Key Pair -> Create Key Pair)
 
