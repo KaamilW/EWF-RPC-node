@@ -7,7 +7,7 @@ This module:
   - Configures Security Groups:
     - Inbound:
       - 80 & 443 TCP from 0.0.0.0/0
-      - 22 TCP from either your network ISP (default) or provided IP
+      - 22 TCP from IP you provided (IP and mask in CIDR notation)
       - 8-0 ICMP from 0.0.0.0/0 (for pinging purposes)
     - Outbound:
       - All ports for all protocols for 0.0.0.0/0   
@@ -56,6 +56,11 @@ module "ewf_rpc_prod" {
 ## Limitations
 Please be aware of your current networking setup to ensure that it is ok to create connection between internet and your subnet
 
+
+### Validation
+You could validate whether your node is set up via running some JSON RPC requests agains your machine public IP on port 80.
+Example requests could be found here: https://openethereum.github.io/wiki/JSONRPC-eth-module 
+
 ## TODOs
 - HTTPS
 - HA
@@ -101,6 +106,22 @@ Description: Internet Gateway Object needed for EC2 dependency.
 Description: "Name of the key pair to attach to EC2"
 
 Type: `string`
+
+### ip\_access\_range\_ingress\_ssh
+
+Description: IP range which should have SSH access to that instance e.g. 88.55.22.219.
+
+Type: `string`
+
+Default: `""`
+
+### cidr\_mask\_ingress\_ssh
+
+Description: IP mask in CIDR notation for SSH access - e.g. /24 or /32.
+
+Type: `string`
+
+Default: `""`
 
 ## Optional Inputs
 
@@ -153,22 +174,6 @@ Description: Link from which you could download latest avilible snapshot of EWF 
 Type: `string`
 
 Default: `"https://drive.google.com/uc?id=1MSrU6Wt9-IKio4Ifj4K08bmnVk7M2VWh"`
-
-### ip\_access\_range\_ingress\_ssh
-
-Description: IP range which should have SSH access to that instance e.g. 88.55.22.219.
-
-Type: `string`
-
-Default: `""`
-
-### cidr\_mask\_ingress\_ssh
-
-Description: IP mask in CIDR notation - e.g. /24 or /32.
-
-Type: `string`
-
-Default: `""`
 
 ### name
 
