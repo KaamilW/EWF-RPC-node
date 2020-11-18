@@ -70,3 +70,7 @@ variable "subnet_id" {
 variable "internet_gw" {
     description = "Internet Gateway Object needed for EC2 dependency"
 }
+
+variable "key_pair_name" {
+    description = "Name of the key pair to attach to EC2"
+}
