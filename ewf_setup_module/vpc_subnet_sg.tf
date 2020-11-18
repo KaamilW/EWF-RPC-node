@@ -1,7 +1,3 @@
-data "external" "my_ip" {
-  program = ["bash", "-c", "curl -s 'https://api.ipify.org?format=json'"]
-}
-
 resource "aws_security_group" "ewf_rpc_sg" {
   name        = "${var.name}_rpc_sg"
   description = "Allow SSH from your machine, allow inbound 80/443, outbound all"
@@ -12,7 +8,7 @@ resource "aws_security_group" "ewf_rpc_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = var.ip_access_range_ingress_ssh != "" ? list(join("",[var.ip_access_range_ingress_ssh, var.cidr_mask_ingress_ssh])) : list(join("", ["${data.external.my_ip.result.ip}", "/32"]))
+    cidr_blocks = list(join("",[var.ip_access_range_ingress_ssh, var.cidr_mask_ingress_ssh])) 
   }
 
   ingress {

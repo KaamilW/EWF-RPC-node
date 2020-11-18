@@ -55,8 +55,8 @@ module "ewf_rpc_prod" {
     ec2_root_volume_size              = 50
     backup_link                       = "https://drive.google.com/uc?id=1ULjWCLgnsleigrWlmrhWo7LptW-Csl0n"
     ec2_instance_type                 = "t3.medium"
-    #ip_access_range_ingress_ssh      = "89.64.55.0"
-    #cidr_mask_ingress_ssh            = "/24"
+    ip_access_range_ingress_ssh      = "89.64.55.0"
+    cidr_mask_ingress_ssh            = "/24"
     vpc_id                            = aws_vpc.ewf_rpc_vpc.id
     subnet_id                         = aws_subnet.ewf_subnet.id
     internet_gw                       = aws_internet_gateway.ewf_internet_gw

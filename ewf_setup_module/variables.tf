@@ -35,13 +35,11 @@ variable "backup_link" {
 
 variable "ip_access_range_ingress_ssh" {
     description = "IP range which should have SSH access to that instance e.g. 88.55.22.219"
-    default =""
     type = string
 }
 
 variable "cidr_mask_ingress_ssh" {
-    description = "IP mask in CIDR notation - e.g. /24 or /32"
-    default =""
+    description = "IP mask in CIDR notation for SSH access - e.g. /24 or /32"
     type = string
 }
 
