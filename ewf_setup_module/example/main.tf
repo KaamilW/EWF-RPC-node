@@ -62,6 +62,7 @@ module "ewf_rpc_prod" {
     internet_gw                       = aws_internet_gateway.ewf_internet_gw
     load_backup                       = true
     name                              = "EWF"
+    key_pair_name                     = "ExampleKey"
 }
 
 #Output node IP address

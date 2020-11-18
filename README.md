@@ -47,6 +47,7 @@ module "ewf_rpc_prod" {
     subnet_id                         = "subnet-04782249f892f6b22"
     load_backup                       = true
     name                              = "EWF"
+    key_pair_name                     = "EWFKey"
 }
 
 
