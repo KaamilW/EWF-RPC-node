@@ -7,7 +7,7 @@ This module:
   - Configures Security Groups:
     - Inbound:
       - 80 & 443 TCP from 0.0.0.0/0
-      - 22 TCP from either your network ISP (default) or provided IP
+      - 22 TCP from IP you provided (IP and mask in CIDR notation)
       - 8-0 ICMP from 0.0.0.0/0 (for pinging purposes)
     - Outbound:
       - All ports for all protocols for 0.0.0.0/0   
@@ -55,6 +55,11 @@ module "ewf_rpc_prod" {
 
 ## Limitations
 Please be aware of your current networking setup to ensure that it is ok to create connection between internet and your subnet
+
+
+### Validation
+You could validate whether your node is set up via running some JSON RPC requests agains your machine public IP on port 80.
+Example requests could be found here: https://openethereum.github.io/wiki/JSONRPC-eth-module 
 
 ## TODOs
 - HTTPS
