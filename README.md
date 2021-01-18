@@ -65,136 +65,41 @@ Example requests could be found here: https://openethereum.github.io/wiki/JSONRP
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-The following requirements are needed by this module:
-
-- terraform (>= 0.13, < 0.14)
-
-- aws (>= 3.5.0, < 4.0)
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13, < 0.14 |
+| aws | >= 3.5.0, < 4.0 |
 
 ## Providers
 
-The following providers are used by this module:
+| Name | Version |
+|------|---------|
+| aws | >= 3.5.0, < 4.0 |
 
-- aws (>= 3.5.0, < 4.0)
+## Inputs
 
-## Required Inputs
-
-The following input variables are required:
-
-### vpc\_id
-
-Description: ID of VPC you want to use.
-
-Type: `string`
-
-### subnet\_id
-
-Description: ID of Subnet you want to use.
-
-Type: `string`
-
-### internet\_gw
-
-Description: Internet Gateway Object needed for EC2 dependency.
-
-### key\_pair\_name
-
-Description: "Name of the key pair to attach to EC2"
-
-Type: `string`
-
-### ip\_access\_range\_ingress\_ssh
-
-Description: IP range which should have SSH access to that instance e.g. 88.55.22.219.
-
-Type: `string`
-
-Default: `""`
-
-### cidr\_mask\_ingress\_ssh
-
-Description: IP mask in CIDR notation for SSH access - e.g. /24 or /32.
-
-Type: `string`
-
-Default: `""`
-
-## Optional Inputs
-
-The following input variables are optional (have default values):
-
-### ec2\_instance\_type
-
-Description: AWS EC2 instance size.
-
-Type: `string`
-
-Default: `"t2.micro"`
-
-### ami\_name\_filter
-
-Description: AWS EC2 AMI search filter.
-
-Type: `string`
-
-Default: `"ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"`
-
-### ami\_owner
-
-Description: AWS EC2 AMI owner.
-
-Type: `string`
-
-Default: `"099720109477"`
-
-### ec2\_root\_volume\_size
-
-Description: AWS EC2 root volume size - in GB.
-
-Type: `number`
-
-Default: `30`
-
-### environment\_name
-
-Description: Type of network you want to set up your node in (test/prod).
-
-Type: `string`
-
-Default: `"test"`
-
-### backup\_link
-
-Description: Link from which you could download latest avilible snapshot of EWF Blockchain Data.
-
-Type: `string`
-
-Default: `"https://drive.google.com/uc?id=1MSrU6Wt9-IKio4Ifj4K08bmnVk7M2VWh"`
-
-### name
-
-Description: Your prefix to be added to resources names.
-
-Type: `string`
-
-Default: `"EWF"`
-
-### load\_backup
-
-Description: Variable defining whether load or not backup script.
-
-Type: `bool`
-
-Default: `true`
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| ami\_name\_filter | AWS EC2 AMI search filter | `string` | `"ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"` | no |
+| ami\_owner | AWS EC2 AMI owner | `string` | `"099720109477"` | no |
+| backup\_link | Link from which you could download latest avilible snapshot of EWF Blockchain Data | `string` | `"https://drive.google.com/uc?id=1MSrU6Wt9-IKio4Ifj4K08bmnVk7M2VWh"` | no |
+| cidr\_mask\_ingress\_ssh | IP mask in CIDR notation for SSH access - e.g. /24 or /32 | `string` | n/a | yes |
+| ec2\_instance\_type | AWS EC2 instance size | `string` | `"t2.micro"` | no |
+| ec2\_root\_volume\_size | AWS EC2 root volume size - in GB | `number` | `30` | no |
+| environment\_name | Type of network you want to set up your node in (test/prod) | `string` | `"test"` | no |
+| internet\_gw | Internet Gateway Object needed for EC2 dependency | `any` | n/a | yes |
+| ip\_access\_range\_ingress\_ssh | IP range which should have SSH access to that instance e.g. 88.55.22.219 | `string` | n/a | yes |
+| key\_pair\_name | Name of the key pair to attach to EC2 | `any` | n/a | yes |
+| load\_backup | Variable defining whether load or not backup script | `bool` | `true` | no |
+| name | Your prefix to be added to resources names | `string` | `"ewf"` | no |
+| subnet\_id | Subnet ID you want to use already existing one | `string` | n/a | yes |
+| vpc\_id | VPC id you want to use already existing one | `string` | n/a | yes |
 
 ## Outputs
 
-The following outputs are exported:
-
-### ewf\_rpc\_ec2\_ip
-
-Description: IP of newly configured RPC node
-
+| Name | Description |
+|------|-------------|
+| ewf\_rpc\_ec2\_ip | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
